@@ -1,0 +1,66 @@
+# General
+*.nav
+*.snm
+*.bak
+*.log
+*.aux
+*.toc
+*.lof
+*.lot
+*.fls
+*.out
+*.dvi
+*.bbl
+*.blg
+*.brf
+*.cb
+*.ind
+*.idx
+*.ilg
+*.inx
+*.ist
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.slg
+*.slo
+*.sls
+*.fdb_latexmk
+*.synctex.gz
+*.run.xml
+*.bcf
+
+# Specific to certain LaTeX packages
+*.alg
+*.loa
+*.lol
+*.nlo
+*.nls
+*.pyg
+*.sympy
+
+# Output files
+#*.pdf
+*.ps
+
+# Directories commonly used
+/bin/
+/build/
+/out/
+
+# Exclude editor directories and files
+*.swp
+*~
+/.vscode/
+.idea/
+
+# Exclude user-specific TeX configuration
+texmf.cnf
+
+# Other common directories to exclude
+/node_modules/
+
