@@ -361,13 +361,13 @@ Unify all human wisdom, by everyone for everyone, via a decentralized open-sourc
     %\vspace{10pt} % Adjust space as needed
 
     \begin{center}
-    \begin{tikzpicture}[>=stealth, node distance=0.25cm and 0.5cm, 
-    block/.style={rectangle, draw, text width=2.5cm, align=center, minimum height=1cm, fill=blue!20, font=\footnotesize}]
+    \begin{tikzpicture}[>=stealth, node distance=0.52cm and 0.3cm,   % *Sqrt[3]
+    block/.style={circle, draw, text width=2cm, align=center, minimum height=1cm, fill=blue!20, font=\footnotesize}]
     
     % Nodes
     \node[block] (babel) {Babel Chain};
-    \node[block, above left=of babel, yshift=2cm, xshift=0.45cm] (users) {Users};
-    \node[block, above right=of babel, yshift=2cm, xshift=-0.45cm] (contributors) {Contributors};
+    \node[block, above left=of babel] (users) {Users};
+    \node[block, above right=of babel] (contributors) {Contributors};
     
     % Paths
     \draw[->] (users.east) to[bend left=0] node[below, sloped] { token} (babel.north);
