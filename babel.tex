@@ -272,12 +272,14 @@ Unify all human wisdom, by everyone for everyone, via a decentralized open-sourc
 \node[block, below of=winner] (validators) {Validators reach consensus on best $C$ in a new block};
 \node[block, right of=winner, xshift=2cm] (agi) {better $C $\\  better AGI};
 \node[block, left of=validators, xshift=-2cm] (reward) {The new block rewards winner with tokens};
-
+\node[block, left of=miner, xshift=-2cm] (repeat) {Repeat};
 % Paths
 \path[line] (miner) -- (winner);
 \path[line] (winner) -- (validators);
 \path[line] (winner) -- (agi);
 \path[line] (validators) -- (reward);
+\path[line](reward) -- (repeat);
+\path[line](repeat) -- (miner);
 
 \end{tikzpicture}
     \end{center}
