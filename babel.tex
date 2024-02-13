@@ -361,22 +361,22 @@ Unify all human wisdom, by everyone for everyone, via a decentralized open-sourc
     %\vspace{10pt} % Adjust space as needed
 
     \begin{center}
-    \begin{tikzpicture}[>=stealth, node distance=1.7cm and1cm,   % *Sqrt[3]
-    block/.style={circle, draw, text width=2cm, align=center, minimum height=1cm, fill=blue!20, font=\footnotesize}]
+    \begin{tikzpicture}[>=stealth, node distance=1.73*2.2 and2.2,   % Sqrt[3]≈1.73
+    block/.style={circle, draw, text width=50, align=center, minimum height=50, fill=blue!20, font=\footnotesize}]
     
     % Nodes
-    \node[block] (babel) {Babel Chain};
-    \node[block, above left=of babel] (users) {Users};
-    \node[block, above right=of babel] (contributors) {Contributors};
+    \node[block] (babel) {Blockchain };
+    \node[block, on grid,  above left=of babel] (users) {Users};
+    \node[block, on grid,  above right=of babel] (contributors) {Contributors};
     
     % Paths
-    \draw[->] (users) to[bend left=0] node[below, sloped] { token} (babel);
-    \draw[->] (babel) to[bend left=0] node[below, sloped] { token} (contributors);
-    \draw[->] (contributors) to[bend left=0] node[above, sloped] { token} (users);
+    \draw[->] (users) to[bend left=20] node[below, sloped] { tokens} (babel);
+    \draw[->] (babel) to[bend left=20] node[below, sloped] { tokens} (contributors);
+    \draw[->] (contributors) to[bend left=20] node[above, sloped] { tokens} (users);
     
     
     \draw[->] (contributors) to[bend left=30] node[below, sloped] {PoWoC improves AGI} (babel);
-    \draw[->] (users) to[bend left=30] node[above, sloped] {pay money to buy tokens} (contributors);
+    \draw[->] (users) to[bend left=30] node[above, sloped] { money buys tokens} (contributors);
     \draw[->] (babel) to[bend left=30] node[below, sloped] { A+B service} (users);
     
     \end{tikzpicture}
