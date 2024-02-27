@@ -17,6 +17,8 @@
 \pgfplotsset{compat=newest}
 
 
+
+
 \title{Decentralized Large AGI Model}
 \author{BABEL}
 \institute{P.I.V.O.T. DAO}
@@ -367,7 +369,7 @@ Unify all human wisdom, by everyone for everyone, via a decentralized open-sourc
     % Nodes
     \node[block] (babel) {Blockchain };
     \node[block, on grid,  above left=of babel] (users) {Users};
-    \node[block, on grid,  above right=of babel] (contributors) {Contributors};
+    \node[block, on grid,  above right=of babel] (contributors) {Contributors\\(Miners)};
     
     % Paths
     \draw[->] (users) to[bend left=20] node[below, sloped] { tokens} (babel);
@@ -394,47 +396,82 @@ Unify all human wisdom, by everyone for everyone, via a decentralized open-sourc
 
 
 
+\section{Financial}
 
+\newcommand{\slice}[5]{
+  \pgfmathparse{0.5*#1+0.5*#2}
+  \let\midangle\pgfmathresult
 
+  % slice
+  \draw[thick,fill=#5] (0,0) -- (#1:1) arc (#1:#2:1) -- cycle;
 
+  % outer label
+  \node[label=\midangle:#4] at (\midangle:1) {};
 
+  % inner label
+  \pgfmathparse{min((#2-#1-10)/110*(-0.3),0)}
+  \let\temp\pgfmathresult
+  \pgfmathparse{max(\temp,-0.5) + 0.8}
+  \let\innerpos\pgfmathresult
+  \node at (\midangle:\innerpos) {#3};
+}
+\begin{frame}{Tokenomics}
+\begin{center}
+\begin{tikzpicture}[scale=2.5]
 
+\newcounter{a}
+\newcounter{b}
+\foreach \p/\t/\c in {
+    10/Early Contributors/yellow!30,
+    10/DAO Foundation/green!30,
+    10/Community Incentive/orange!30,
+        5/Founders/blue!30,
+    15/VC/cyan!30,
+    50/To Be Mined/red!30
+                   }
+  {
+    \setcounter{a}{\value{b}}
+    \addtocounter{b}{\p}
+    \slice{\thea/100*360}
+          {\theb/100*360}
+          {\p\%}
+          {\t}
+          {\c}
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Conclusion}
-\begin{frame}{Key Take-away}
-Satoshi found a metric to compute degrees of faithfulness: \textbf{PoW}
-
-Vitalik found a metric to compute degrees of loyalty: \textbf{PoS}
-
-We found a metric to compute degrees of intelligence: \textbf{PoWoC}
+\end{tikzpicture}
+\end{center}
 \end{frame}
 
 
 
-\section{FAQ}
-\begin{frame}{FAQ}
-\textbf{Q: Can someone with no hardware participate in PoWoC?} \\
-A: Yes, tweaking the prompts might also cause surprising effects on the compression ratio, making participation feasible even without specialized hardware. In fact, there are various means to earn tokens in the ecosystem, all but the first one is strongly related to PoWoC:
-\begin{itemize}
-\item contribute data
-\item contribute computing power \#PoWoC \#hardware
-\item revise prompts \#PoWoC
-\end{itemize}
-\end{frame}
+
+
+
+
+
+
+%\section{Conclusion}
+%\begin{frame}{Key Take-away}
+%Satoshi found a metric to compute degrees of faithfulness: \textbf{PoW}
+%
+%Vitalik found a metric to compute degrees of loyalty: \textbf{PoS}
+%
+%We found a metric to compute degrees of intelligence: \textbf{PoWoC}
+%\end{frame}
+%
+%
+%
+%\section{FAQ}
+%\begin{frame}{FAQ}
+%\textbf{Q: Can someone with no hardware participate in PoWoC?} \\
+%A: Yes, tweaking the prompts might also cause surprising effects on the compression ratio, making participation feasible even without specialized hardware. In fact, there are various means to earn tokens in the ecosystem, all but the first one is strongly related to PoWoC:
+%\begin{itemize}
+%\item contribute data
+%\item contribute computing power \#PoWoC \#hardware
+%\item revise prompts \#PoWoC
+%\end{itemize}
+%\end{frame}
 
 
 \end{document}
