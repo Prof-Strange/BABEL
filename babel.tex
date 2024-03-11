@@ -475,6 +475,53 @@ DAPP & NFPrompt (NFP) & \$185,280,912 \\
 
 \section{Financial}
 
+\begin{frame}{Tokenomics Overview}
+\begin{table}
+\begin{footnotesize}
+\begin{tabular}{l l l ll}
+\hline
+
+\textbf{Token} & \textbf{Source} & \textbf{Inflation/Deflation} & \textbf{Value Anchor} \\
+\hline
+wBABEL & POW Protocol & Exponential Inflation & sBABEL  \\
+sBABEL & POS Protocol & Weak Deflation & Future Burning as Dividends \\
+gBABEL & ATCGU Protocol & Stable Coin as Gas & TPS Supply \& Demand \\
+\hline
+\end{tabular}
+\end{footnotesize}
+\end{table}
+
+
+\begin{figure}
+        \centering
+        \begin{minipage}{.32\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{images/Fig1.png}
+            \caption{wBABEL supply trend (not drawn to scale)}
+        \end{minipage}%
+        \hfill
+        \begin{minipage}{.32\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{images/Fig2.png}
+            \caption{sBABEL supply trend (not drawn to scale)}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{.32\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{images/Fig3.png}
+            \caption{gBABEL supply trend (not drawn to scale)}
+        \end{minipage}
+    \end{figure}
+\end{frame}
+
+
+
+
+
+
+
+
+
 \newcommand{\slice}[5]{
   \pgfmathparse{0.5*#1+0.5*#2}
   \let\midangle\pgfmathresult
@@ -492,7 +539,7 @@ DAPP & NFPrompt (NFP) & \$185,280,912 \\
   \let\innerpos\pgfmathresult
   \node at (\midangle:\innerpos) {#3};
 }
-\begin{frame}{Tokenomics}
+\begin{frame}{Tokenomics (sBABEL) }
 \begin{center}
 \begin{tikzpicture}[scale=2.5]
 
