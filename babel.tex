@@ -10,7 +10,7 @@
 \documentclass{beamer}
 
 \usetheme{Madrid} % You can change the theme to suit your taste
-
+\usepackage{adjustbox} % Include this in your preamble
 \usepackage{tikz}
 \usetikzlibrary{positioning, arrows, shapes.geometric, automata, calc}
 \usepackage{pgfplots}
@@ -79,7 +79,7 @@ Unify all humanity wisdom, by everyone for everyone, via a decentralized open-so
 % Slide 2: Philosophical Problems
 \begin{frame}{Philosophical Problems}
 \begin{itemize}
-    \item AGI (Artificial General Intelligence)--an algorithm that will outsmart humanity
+    \item AGI (Artificial General Intelligence)--an algorithm that will outsmart humanity, \emph{taking everyone's jobs}
     \item That's too much power for one man to have, for anyone to have.
     \item So who should own it...
     \item --everybody, I guess?
@@ -92,11 +92,11 @@ Unify all humanity wisdom, by everyone for everyone, via a decentralized open-so
 % Slide 3: Specific Problems
 \begin{frame}{Specific Problems}
 \begin{itemize}
-    \item \textbf{Centralization Risks: } A few powerful entities control AI's future, limiting diversity and innovation.
-	\item \textbf{Privacy Concerns: } Inadequate protections and compensation for user data in AI development and application.
-	\item \textbf{Accessibility and Economic Barriers: } High entry costs on capital prevent widespread participation in AGI's research \& development -- and applications.
-	\item \textbf{Blockchain Usability: } Existing blockchain languages are hard to learn and harder to use.
-	\item \textbf{Sustainability of Open-Source AGI: } Challenges in maintaining an open-source model that is both inclusive and economically viable.
+    \item \textbf{Centralization Risks: } A few powerful entities \emph{monopolize} AI's future, limiting diversity and innovation.
+	\item \textbf{Privacy Concerns: } Inadequate \emph{protections and compensation} for user data in AI development and application.
+	\item \textbf{Accessibility and Economic Barriers: } High \emph{entry costs} on capital prevent widespread participation in AGI's research \& development -- and applications.
+	\item \textbf{Blockchain Usability: } Existing blockchain languages are \emph{hard to learn and harder to use}.
+	\item \textbf{Sustainability of Open-Source AGI: } Challenges in maintaining an open-source model that is both inclusive and \emph{economically viable}.
 \end{itemize}
 \end{frame}
 
@@ -104,11 +104,11 @@ Unify all humanity wisdom, by everyone for everyone, via a decentralized open-so
 % Slide 4: Solution
 \begin{frame}{Solution}
 \begin{itemize}
-    \item \textbf{Decentralized AGI Protocol: } {\footnotesize Blockchain technology decentralizes storage (data) and model training (computation)}
-    \item \textbf{Personalization \& Privacy: } {\footnotesize Utilizes a foundation+personal model structure, differentiating between shared knowledge and individual, encrypted, self-owned personal models for trustless privacy.}
-    \item \textbf{Fair Contribution Incentive} {\footnotesize Implements a token economy with Proof of Work of Compression (PoWoC) for quantifiable and computable contributions, reducing AGI contributors' entry barriers and encouraging wider participation.}
-    \item \textbf{A+B Integration: } {\footnotesize Integrating Large Language Model (LLM) \textbf{A}GI with \textbf{B}lockchain naturally solves usability issues, making blockchain applications more accessible and applicable, fostering a sustainable, profitable, and universally fair open-source ecosystem.}
-    \item \textbf{Sustainable Tokenomics: } {\footnotesize Users (demand) transfer tokens to the blockchain for A+B integration; the blockchain transfers tokens to contributors (supply) for every incremental improvement of AGI.}
+    \item \textbf{Decentralized AGI Protocol: } {\footnotesize Blockchain technology \emph{decentralizes} storage (data) and model training (computation)}
+    \item \textbf{Personalization \& Privacy: } {\footnotesize Utilizes a foundation+personal model structure, differentiating between shared knowledge and individual, encrypted, \emph{self-owned} personal models for trustless privacy.}
+    \item \textbf{Fair Contribution Incentive} {\footnotesize Implements a token economy with \emph{Proof of Work of Compression (PoWoC)} for quantifiable and computable contributions, reducing AGI contributors' entry barriers and encouraging wider participation.}
+    \item \textbf{A+B Integration: } {\footnotesize Integrating Large Language Model (LLM) \textbf{A}GI with \textbf{B}lockchain naturally solves usability issues, making blockchain applications \emph{programmable with natural language}, fostering a sustainable, profitable, and universally fair open-source ecosystem.}
+    \item \textbf{Sustainable Tokenomics: } {\footnotesize Users (demand) transfer \emph{tokens} to the blockchain for A+B integration; the blockchain transfers \emph{tokens} to contributors (supply) for every incremental improvement of AGI.}
 \end{itemize}
 \end{frame}
 
@@ -153,7 +153,7 @@ Unify all humanity wisdom, by everyone for everyone, via a decentralized open-so
 \section{Market Size}
 \begin{frame}{Market Size}
 \begin{center}
-    \Huge \$7 TRILLION \\
+    \Huge \$7,000,000,000,000\\
     \Large -- SAM ALTMAN \\
     \vspace{3em} % Adds some space before the next line
     \normalsize{Challenge the valuation? You price the totality of humanity wisdom.}
@@ -165,7 +165,7 @@ Unify all humanity wisdom, by everyone for everyone, via a decentralized open-so
 
 
 
-\begin{frame}{Existing De-Market Size Breakdown}
+\begin{frame}{Existing De-Market Size Breakdown (Feb. 2024)}
 %\frametitle{Circulation Market Value of Selected Projects}
 \resizebox{\textwidth}{!}{% Resize table to fit within slide width
 \begin{tabular}{|l|l|r|}
@@ -304,31 +304,34 @@ DAPP & NFPrompt (NFP) & \$185,280,912 \\
 
 
 \begin{frame}{Product: PoWoC Overview}
-    \begin{center}
-\begin{tikzpicture}[
-    node distance=2cm,
-    auto,
-    block/.style={rectangle, draw, fill=blue!20, text width=8em, text centered, rounded corners, minimum height=4em},
-    line/.style={draw, -latex}
-]
-
-% Nodes
-\node[block] (miner) {Contributors compete to compress dataset};
-\node[block, below of=miner] (winner) {Best compression $C:=\alpha-\frac{p}{d} $ is the winner};
-\node[block, below of=winner] (validators) {Validators reach consensus on best $C$ in a new block};
-\node[block, right of=winner, xshift=2cm] (agi) {better $C$\\  better AGI};
-\node[block, left of=validators, xshift=-2cm] (reward) {The new block rewards winner with tokens};
-\node[block, left of=miner, xshift=-2cm] (repeat) {Repeat};
-% Paths
-\path[line] (miner) -- (winner);
-\path[line] (winner) -- (validators);
-\path[line] (winner) -- (agi);
-\path[line] (validators) -- (reward);
-\path[line](reward) -- (repeat);
-\path[line](repeat) -- (miner);
-
-\end{tikzpicture}
-    \end{center}
+    \begin{minipage}{0.5\textwidth}
+    \begin{adjustbox}{scale=0.5}
+        \begin{tikzpicture}[
+            node distance=9em,
+            auto,
+            block/.style={rectangle, draw, fill=blue!20, text width=7em, text centered, rounded corners, minimum height=5em},
+            line/.style={draw, -latex}
+        ]
+        % Nodes
+        \node[block] (miner) {Contributors compete to compress dataset};
+        \node[block, below of=miner] (winner) {Best compression $C:=\alpha-\frac{p}{d} $ is the winner};
+        \node[block, below of=winner] (validators) {Validators reach consensus on best $C$ in a new block};
+        \node[block, right of=winner] (agi) {Better $C$, better AGI};
+        \node[block, left of=validators] (reward) {New block rewards winner with tokens};
+        \node[block, left of=miner] (repeat) {Repeat};
+        % Paths
+        \path[line] (miner) -- (winner);
+        \path[line] (winner) -- (validators);
+        \path[line] (winner) -- (agi);
+        \path[line] (validators) -- (reward);
+        \path[line] (reward) -- (repeat);
+        \path[line] (repeat) -- (miner);
+        \end{tikzpicture}
+    \end{adjustbox}
+    \end{minipage}%
+    \begin{minipage}{0.45\textwidth}
+        PoWoC, or Proof of Work of Compression, is a novel consensus mechanism that incentivizes contributors to compress datasets efficiently. By competing to produce the best compression ratio, contributors directly contribute to the improvement of AGI. The mechanism ensures that the most effectively compressed AGI model is rewarded. This process is cyclical, promoting continuous improvement and collaboration among participants.
+    \end{minipage}
 \end{frame}
 
 
@@ -399,34 +402,36 @@ DAPP & NFPrompt (NFP) & \$185,280,912 \\
 
 
 
-
 \section{Business Model}
 \begin{frame}[t]{Business Model: Ecosystem as a Service}
     \textit{An ecosystem of an AGI-embedded blockchain for more casual use}
-    
-    %\vspace{10pt} % Adjust space as needed
-
-    \begin{center}
-    \begin{tikzpicture}[>=stealth, node distance=1.73*2.2 and2.2,   % Sqrt[3]≈1.73
-    block/.style={circle, draw, text width=50, align=center, minimum height=50, fill=blue!20, font=\footnotesize}]
-    
-    % Nodes
-    \node[block] (babel) {Blockchain };
-    \node[block, on grid,  above left=of babel] (users) {Users};
-    \node[block, on grid,  above right=of babel] (contributors) {Contributors\\(Miners)};
-    
-    % Paths
-    \draw[->] (users) to[bend left=20] node[below, sloped] { tokens} (babel);
-    \draw[->] (babel) to[bend left=20] node[below, sloped] { tokens} (contributors);
-    \draw[->] (contributors) to[bend left=20] node[above, sloped] { tokens} (users);
-    
-    
-    \draw[->] (contributors) to[bend left=30] node[below, sloped] {PoWoC improves AGI} (babel);
-    \draw[->] (users) to[bend left=30] node[above, sloped] { money buys tokens} (contributors);
-    \draw[->] (babel) to[bend left=30] node[below, sloped] { A+B service} (users);
-    
-    \end{tikzpicture}
+    \vfill % Add space at the top
+    \begin{center} % Center the content horizontally
+    \begin{minipage}{0.45\textwidth}
+        \begin{adjustbox}{scale=0.75}
+				 \begin{tikzpicture}[>=stealth, node distance=1.73*2.2 and 2.2, % Sqrt[3]≈1.73
+                block/.style={circle, draw, text width=50, align=center, minimum height=50, fill=blue!20, font=\footnotesize}]
+                
+                % Nodes
+                \node[block] (babel) {Blockchain};
+                \node[block, on grid, above left=of babel] (users) {Users};
+                \node[block, on grid, above right=of babel] (contributors) {Contributors (Miners)};
+                
+                % Paths
+                \draw[->] (users) to[bend left=20] node[below, sloped] {tokens} (babel);
+                \draw[->] (babel) to[bend left=20] node[below, sloped] {tokens} (contributors);
+                \draw[->] (contributors) to[bend left=20] node[above, sloped] {tokens} (users);
+                \draw[->] (contributors) to[bend left=30] node[below, sloped] {PoWoC improves AGI} (babel);
+                \draw[->] (users) to[bend left=30] node[above, sloped] {money buys tokens} (contributors);
+                \draw[->] (babel) to[bend left=30] node[below, sloped] {A+B service} (users);
+                \end{tikzpicture}
+        \end{adjustbox}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        The Babel model is a cycle of innovation and exchange: users buy tokens to access services, contributors mine tokens by improving AGI via PoWoC, and the blockchain rewards contributions, fueling a self-sustaining ecosystem of growth and accessibility.
+    \end{minipage}
     \end{center}
+    \vfill % Add space at the bottom
 \end{frame}
 
 
@@ -539,7 +544,7 @@ gBABEL & ATCGU\footnote{{\tiny Always Totally Collateralized Game-theory-stable 
   \let\innerpos\pgfmathresult
   \node at (\midangle:\innerpos) {#3};
 }
-\begin{frame}{Tokenomics (sBABEL) }
+\begin{frame}{sBABEL Tokenomics (Valuation TBD) }
 \begin{center}
 \begin{tikzpicture}[scale=2.5]
 
@@ -549,8 +554,10 @@ gBABEL & ATCGU\footnote{{\tiny Always Totally Collateralized Game-theory-stable 
     10/Early Contributors/yellow!30,
     10/DAO Foundation/green!30,
     10/Community Incentive/orange!30,
-        5/Founders/blue!30,
-    15/VC/cyan!30,
+        8/Founders/blue!30,
+    5/Angle/cyan!30,
+        5/Seed/purple!30,
+            2/Public/pink!30,
     50/To Be Mined/red!30
                    }
   {
@@ -566,7 +573,6 @@ gBABEL & ATCGU\footnote{{\tiny Always Totally Collateralized Game-theory-stable 
 \end{tikzpicture}
 \end{center}
 \end{frame}
-
 
 
 
